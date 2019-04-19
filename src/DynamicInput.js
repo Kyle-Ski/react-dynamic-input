@@ -3,11 +3,14 @@ import React from "react"
 const DynamicInput = ({
   addButtonText = "Add Input",
   setInput,
-  input = [],
+  input,
   submitButtonText = "Submit",
   onSubmit,
   inputName,
-  addPosition
+  addPosition,
+  type = "text",
+  placeholderText = "Input..",
+  removeText = "Remove"
 }) => {
   const addInput = e => {
     e.preventDefault()
@@ -35,34 +38,48 @@ const DynamicInput = ({
         {input.map((item, index) => (
           <div key={(index + 1) * 2}>
             <input
-              type="text"
-              placeholder="text here..."
+              className="dynamicInput"
+              type={type}
+              placeholder={placeholderText}
               onChange={inputChange(index)}
               value={item[inputName]}
             />
-            <button onClick={removeInput(index)}>Remove</button>
+            <button className="removeButton" onClick={removeInput(index)}>
+              {removeText}
+            </button>
           </div>
         ))}
-        <button onClick={onSubmit}>{submitButtonText}</button>
-        <button onClick={addInput}>{addButtonText}</button>
+        <button className="submitButton" onClick={onSubmit}>
+          {submitButtonText}
+        </button>
+        <button className="addButton" onClick={addInput}>
+          {addButtonText}
+        </button>
       </div>
     )
   } else {
     return (
       <div className="DynamicInput">
-        <button onClick={addInput}>{addButtonText}</button>
+        <button className="addButton" onClick={addInput}>
+          {addButtonText}
+        </button>
         {input.map((item, index) => (
           <div key={(index + 1) * 2}>
             <input
-              type="text"
-              placeholder="text here..."
+              className="dynamicInput"
+              type={type}
+              placeholder={placeholderText}
               onChange={inputChange(index)}
               value={item[inputName]}
             />
-            <button onClick={removeInput(index)}>Remove</button>
+            <button className="removeButton" onClick={removeInput(index)}>
+              {removeText}
+            </button>
           </div>
         ))}
-        <button onClick={onSubmit}>{submitButtonText}</button>
+        <button className="submitButton" onClick={onSubmit}>
+          {submitButtonText}
+        </button>
       </div>
     )
   }
