@@ -7,9 +7,11 @@ const DynamicInput = ({
   submitButtonText = "Submit",
   onSubmit,
   inputName,
-  addPosition
+  addPosition,
+  type = "text",
+  placeholderText = "Input..",
+  removeText = "Remove"
 }) => {
-  const [show, setShow] = useState(false)
   const addInput = e => {
     e.preventDefault()
     setInput([...input, { name: "" }])
@@ -18,7 +20,6 @@ const DynamicInput = ({
     e.preventDefault()
     const items = input.filter((item, subIndex) => index !== subIndex)
     setInput(items)
-    console.log(index, items)
   }
 
   const inputChange = index => e => {
@@ -37,34 +38,48 @@ const DynamicInput = ({
         {input.map((item, index) => (
           <div key={(index + 1) * 2}>
             <input
-              type="text"
-              placeholder="text here..."
+              className="dynamicInput"
+              type={type}
+              placeholder={placeholderText}
               onChange={inputChange(index)}
               value={item[inputName]}
             />
-            <button onClick={removeInput(index)}>Remove</button>
+            <button className="removeButton" onClick={removeInput(index)}>
+              {removeText}
+            </button>
           </div>
         ))}
-        <button onClick={onSubmit}>{submitButtonText}</button>
-        <button onClick={addInput}>{addButtonText}</button>
+        <button className="submitButton" onClick={onSubmit}>
+          {submitButtonText}
+        </button>
+        <button className="addButton" onClick={addInput}>
+          {addButtonText}
+        </button>
       </div>
     )
   } else {
     return (
       <div className="DynamicInput">
-        <button onClick={addInput}>{addButtonText}</button>
+        <button className="addButton" onClick={addInput}>
+          {addButtonText}
+        </button>
         {input.map((item, index) => (
           <div key={(index + 1) * 2}>
             <input
-              type="text"
-              placeholder="text here..."
+              className="dynamicInput"
+              type={type}
+              placeholder={placeholderText}
               onChange={inputChange(index)}
               value={item[inputName]}
             />
-            <button onClick={removeInput(index)}>Remove</button>
+            <button className="removeButton" onClick={removeInput(index)}>
+              {removeText}
+            </button>
           </div>
         ))}
-        <button onClick={onSubmit}>{submitButtonText}</button>
+        <button className="submitButton" onClick={onSubmit}>
+          {submitButtonText}
+        </button>
       </div>
     )
   }
@@ -87,6 +102,9 @@ const App = () => {
         submitColor="green"
         submitButtonText="Submit"
         addPosition="bottom"
+        // type="number"
+        placeholderText="Text here.."
+        removeText="remove"
       />
       {input.map(item => (
         <p>{item.name}</p>

@@ -27,6 +27,8 @@ class YourComponent extends React.Component {
 | `onSubmit`         |             | `function` | The onSubmit function you would like to execute when a user submits the form                                                                              |     |
 | `submitButtonText` | "Submit"    | `String`   | The text you would like to appear on the submit button                                                                                                    |     |
 | `addPosition`      | "top"       | `String`   | The position you would like the "Add Input" button to be. "top" will make it above the inputs, "bottom" will place it below and next to the submit button |     |
+| `type`             | "text"      | `String`   | The `type` of input you would like to have                                                                                                                |     |
+| `placeholderText`  | "Input.."   | `String`   | The text you would like to have as a placeholder for the inputs                                                                                           |     |
 
 ## Example
 
