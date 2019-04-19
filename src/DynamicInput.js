@@ -4,7 +4,7 @@ const DynamicInput = ({
   addButtonText = "Add Input",
   setInput,
   input,
-  buttonText,
+  submitButtonText = "Submit",
   onSubmit,
   inputName,
   addPosition
@@ -45,7 +45,7 @@ const DynamicInput = ({
             <button onClick={removeInput(index)}>Remove</button>
           </div>
         ))}
-        <button onClick={onSubmit}>{buttonText}</button>
+        <button onClick={onSubmit}>{submitButtonText}</button>
         <button onClick={addInput}>{addButtonText}</button>
       </div>
     )
@@ -64,7 +64,7 @@ const DynamicInput = ({
             <button onClick={removeInput(index)}>Remove</button>
           </div>
         ))}
-        <button onClick={onSubmit}>{buttonText}</button>
+        <button onClick={onSubmit}>{submitButtonText}</button>
       </div>
     )
   }
@@ -85,7 +85,7 @@ const App = () => {
         input={input}
         onSubmit={showState}
         submitColor="green"
-        buttonText="Submit"
+        submitButtonText="Submit"
         addPosition="bottom"
       />
       {input.map(item => (
