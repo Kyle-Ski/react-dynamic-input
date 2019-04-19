@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 
 const DynamicInput = ({
-  addButtonText,
+  addButtonText = "Add Input",
   setInput,
   input,
   buttonText,
