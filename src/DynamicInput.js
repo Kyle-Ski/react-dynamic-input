@@ -1,15 +1,14 @@
-import React, { useState } from "react"
+import React from "react"
 
 const DynamicInput = ({
   addButtonText = "Add Input",
   setInput,
-  input,
+  input = [],
   submitButtonText = "Submit",
   onSubmit,
   inputName,
   addPosition
 }) => {
-  const [show, setShow] = useState(false)
   const addInput = e => {
     e.preventDefault()
     setInput([...input, { name: "" }])
@@ -18,7 +17,6 @@ const DynamicInput = ({
     e.preventDefault()
     const items = input.filter((item, subIndex) => index !== subIndex)
     setInput(items)
-    console.log(index, items)
   }
 
   const inputChange = index => e => {
@@ -70,29 +68,4 @@ const DynamicInput = ({
   }
 }
 
-const App = () => {
-  const [input, setInput] = useState([{ name: "" }])
-
-  const showState = () => {
-    alert(input.map(item => item.name))
-  }
-  return (
-    <div>
-      <DynamicInput
-        inputName="name"
-        addButtonText="Add Input"
-        setInput={setInput}
-        input={input}
-        onSubmit={showState}
-        submitColor="green"
-        submitButtonText="Submit"
-        addPosition="bottom"
-      />
-      {input.map(item => (
-        <p>{item.name}</p>
-      ))}
-    </div>
-  )
-}
-
-export default App
+export default DynamicInput
