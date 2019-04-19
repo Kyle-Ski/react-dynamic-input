@@ -3,7 +3,7 @@ import React from "react"
 const DynamicInput = ({
   addButtonText = "Add Input",
   setInput,
-  input,
+  input = [],
   submitButtonText = "Submit",
   onSubmit,
   inputName,
