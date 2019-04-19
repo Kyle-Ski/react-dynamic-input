@@ -21,7 +21,7 @@ class YourComponent extends React.Component {
 | Name               	| Default     	| Type       	| Description                                                                                                                                               	|   	|
 |--------------------	|-------------	|------------	|-----------------------------------------------------------------------------------------------------------------------------------------------------------	|---	|
 | `inputName`        	|             	| `String`   	| The key you would like to be assigned to the state of each of the inputs that are created                                                                 	|   	|
-| `addButtonText     	| "Add Input" 	| `String`   	| The text you would like to appear on the button to create another input                                                                                   	|   	|
+| `addButtonText`     	| "Add Input" 	| `String`   	| The text you would like to appear on the button to create another input                                                                                   	|   	|
 | `setInput`         	|             	| `function` 	| The onChange function you would like to be executed when a user types into the input (setState, or useState)                                              	|   	|
 | `input`            	|             	| `Array`    	| The state you will pass to the component. Must be the shape of `[{inputName: ""}]`                                                                        	|   	|
 | `onSubmit`         	|             	| `function` 	| The onSubmit function you would like to execute when a user submits the form                                                                              	|   	|
