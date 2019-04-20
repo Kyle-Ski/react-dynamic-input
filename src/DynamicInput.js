@@ -6,7 +6,7 @@ const DynamicInput = ({
   input = [],
   submitButtonText = "Submit",
   onSubmit,
-  inputName,
+  inputName = "name",
   addPosition,
   type = "text",
   placeholderText = "Input..",
