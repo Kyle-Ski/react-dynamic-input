@@ -1,6 +1,5 @@
 {
   "compilerOptions": {
-    "declaration": true,
     "outDir": "./dist/",
     "sourceMap": true,
     "noImplicitAny": true,
@@ -16,7 +15,8 @@
     "forceConsistentCasingInFileNames": true,
     "moduleResolution": "node",
     "resolveJsonModule": true,
-    "noEmit": true
+    "noEmit": true,
+    "isolatedModules": true
   },
   "include": ["./src/**/*"],
   "exclude": ["node_modules", "dist"]

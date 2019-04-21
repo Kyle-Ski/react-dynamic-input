@@ -1,9 +1,12 @@
 import React from "react"
 
+export interface userPermeablePropzObject {
+  [key: string]: any
+}
 export type DynamicInputProps = {
   addButtonText?: string
   setInput: Function
-  input: Array<Object>
+  input: Array<userPermeablePropzObject>
   submitButtonText?: string
   onSubmit: Function
   inputName: string
@@ -12,6 +15,10 @@ export type DynamicInputProps = {
   placeholderText?: string
   removeText?: string
 }
+
+// export type mapItem = {
+//   [key: string]: string
+// }
 const DynamicInput = ({
   addButtonText = "Add Input",
   setInput,
@@ -24,17 +31,19 @@ const DynamicInput = ({
   placeholderText = "Input..",
   removeText = "Remove"
 }: DynamicInputProps) => {
-  const addInput = e => {
+  const addInput = (e: Event) => {
     e.preventDefault()
     setInput([...input, { name: "" }])
   }
-  const removeInput = index => e => {
+  const removeInput = (index: Number) => (e: Event) => {
     e.preventDefault()
     const items = input.filter((item, subIndex) => index !== subIndex)
     setInput(items)
   }
 
-  const inputChange = index => e => {
+  const inputChange = (index: Number) => (
+    e: React.ChangeEvent<HTMLInputElement>
+  ) => {
     const elements = input.map((element, subIndex) => {
       if (index !== subIndex) {
         return element
@@ -56,7 +65,7 @@ const DynamicInput = ({
               onChange={inputChange(index)}
               value={item[inputName]}
             />
-            <button className="removeButton" onClick={removeInput(index)}>
+            <button className="removeButton" onClick={() => removeInput(index)}>
               {removeText}
             </button>
           </div>
@@ -64,7 +73,7 @@ const DynamicInput = ({
         <button className="submitButton" onClick={onSubmit()}>
           {submitButtonText}
         </button>
-        <button className="addButton" onClick={addInput}>
+        <button className="addButton" onClick={() => addInput}>
           {addButtonText}
         </button>
       </div>
@@ -72,7 +81,7 @@ const DynamicInput = ({
   } else {
     return (
       <div className="DynamicInput">
-        <button className="addButton" onClick={addInput}>
+        <button className="addButton" onClick={() => addInput}>
           {addButtonText}
         </button>
         {input.map((item, index) => (
@@ -84,7 +93,7 @@ const DynamicInput = ({
               onChange={inputChange(index)}
               value={item[inputName]}
             />
-            <button className="removeButton" onClick={removeInput(index)}>
+            <button className="removeButton" onClick={() => removeInput(index)}>
               {removeText}
             </button>
           </div>
