@@ -5,9 +5,9 @@
   "version": "0.1.1",
   "private": false,
   "license": "(ISC OR GPL-3.0)",
-  "main": "dist/DynamicInput.js",
-  "module": "dist/DynamicInput.js",
-  "types": "dist/index.d.ts",
+  "main": "build/index.js",
+  "module": "build/index.js",
+  "types": "build/index.d.ts",
   "repository": {
     "type": "git",
     "url": "https://github.com/Kyle-Ski/react-dynamic-input"
