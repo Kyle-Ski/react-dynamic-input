@@ -1,5 +1,5 @@
 import React from "react"
 import ReactDOM from "react-dom"
-import App from "./App"
+import DynamicInput from "./DynamicInput"
 
-ReactDOM.render(<App />, document.getElementById("root"))
+ReactDOM.render(<DynamicInput />, document.getElementById("root"))

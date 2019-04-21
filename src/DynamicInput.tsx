@@ -19,7 +19,7 @@ export interface DynamicInputProps {
 const DynamicInput: React.FC<DynamicInputProps> = ({
   addButtonText = "Add Input",
   setInput,
-  input,
+  input = [],
   submitButtonText = "Submit",
   onSubmit,
   inputName,
