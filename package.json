@@ -1,10 +1,13 @@
 {
   "name": "react-dynamic-input",
-  "version": "0.1.0",
+  "description": "An input that can be replicated with a button, each input has its own state",
+  "author": "Kyle Czajkowski",
+  "version": "0.1.1",
   "private": false,
   "license": "(ISC OR GPL-3.0)",
   "main": "dist/index.js",
   "module": "dist/index.js",
+  "types": "dist/index.d.ts",
   "repository": {
     "type": "git",
     "url": "https://github.com/Kyle-Ski/react-dynamic-input"
@@ -16,15 +19,14 @@
   },
   "dependencies": {
     "react": "^16.8.6",
-    "react-dom": "^16.8.6",
-    "react-scripts": "2.1.8"
+    "typescript": "^3.4.4"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "publish:npm": "SET NODE_ENV=production && rm -rf dist && mkdir dist && npx babel src/DynamicInput --out-dir dist --copy-files"
+    "publish:npm": "NODE_ENV=production && rm -rf dist && mkdir dist && npx babel src/DynamicInput.js --out-dir dist --copy-files"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -36,6 +38,8 @@
     "not op_mini all"
   ],
   "devDependencies": {
-    "@babel/cli": "^7.4.3"
+    "@babel/cli": "^7.4.3",
+    "react-dom": "^16.8.6",
+    "react-scripts": "2.1.8"
   }
 }

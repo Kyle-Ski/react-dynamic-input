@@ -1,5 +1,17 @@
-import React, { useState } from "react"
+import React from "react"
 
+export type DynamicInputProps = {
+  addButtonText?: string
+  setInput: Function
+  input: Array<Object>
+  submitButtonText?: string
+  onSubmit: Function
+  inputName: string
+  addPosition?: string
+  type?: string
+  placeholderText?: string
+  removeText?: string
+}
 const DynamicInput = ({
   addButtonText = "Add Input",
   setInput,
@@ -11,7 +23,7 @@ const DynamicInput = ({
   type = "text",
   placeholderText = "Input..",
   removeText = "Remove"
-}) => {
+}: DynamicInputProps) => {
   const addInput = e => {
     e.preventDefault()
     setInput([...input, { name: "" }])
@@ -49,7 +61,7 @@ const DynamicInput = ({
             </button>
           </div>
         ))}
-        <button className="submitButton" onClick={onSubmit}>
+        <button className="submitButton" onClick={onSubmit()}>
           {submitButtonText}
         </button>
         <button className="addButton" onClick={addInput}>
@@ -77,7 +89,7 @@ const DynamicInput = ({
             </button>
           </div>
         ))}
-        <button className="submitButton" onClick={onSubmit}>
+        <button className="submitButton" onClick={onSubmit()}>
           {submitButtonText}
         </button>
       </div>
@@ -85,32 +97,4 @@ const DynamicInput = ({
   }
 }
 
-const App = () => {
-  const [input, setInput] = useState([{ name: "" }])
-
-  const showState = () => {
-    alert(input.map(item => item.name))
-  }
-  return (
-    <div>
-      <DynamicInput
-        inputName="name"
-        addButtonText="Add Input"
-        setInput={setInput}
-        input={input}
-        onSubmit={showState}
-        submitColor="green"
-        submitButtonText="Submit"
-        addPosition="bottom"
-        // type="number"
-        placeholderText="Text here.."
-        removeText="remove"
-      />
-      {input.map(item => (
-        <p>{item.name}</p>
-      ))}
-    </div>
-  )
-}
-
-export default App
+export default DynamicInput
