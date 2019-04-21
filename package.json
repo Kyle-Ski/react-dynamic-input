@@ -7,6 +7,7 @@
   "license": "(ISC OR GPL-3.0)",
   "main": "dist/DynamicInput.js",
   "module": "dist/DynamicInput.js",
+  "types": "dist/index.d.ts",
   "repository": {
     "type": "git",
     "url": "https://github.com/Kyle-Ski/react-dynamic-input"
@@ -17,14 +18,16 @@
     ]
   },
   "dependencies": {
-    "react": "^16.8.6"
+    "@types/react": "^16.8.14",
+    "react": "^16.8.6",
+    "typescript": "^3.4.4"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "publish:npm": "NODE_ENV=production && rm -rf dist && mkdir dist && npx babel src/DynamicInput.js --out-dir dist --copy-files"
+    "publish:npm": "tsc && rm -rf dist && mkdir dist && npx babel src/DynamicInput.js --out-dir dist --copy-files"
   },
   "eslintConfig": {
     "extends": "react-app"
