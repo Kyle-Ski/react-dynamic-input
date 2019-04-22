@@ -1,5 +1,11 @@
 # Dynamically Created Inputs (Currently under Construction 👷‍♂️)
 
+## Create multiple inputs!
+
+`react-dynamic-input` allows you to create multiple inputs that each have their own unique state that you define. It also comes with a built in `onSubmit` button which takes a function that you ceate.
+<br>
+<img src="./Dynamic\ Example.gif" width="650" alt="Example GIF">
+
 ## Installation & Usage (WIP)
 
 1. `npm i react-dynamic-input`
@@ -18,18 +24,18 @@ class YourComponent extends React.Component {
 
 3.  `props` for the `<DynamicInput/>`:
 
-| Name               | Default     | Type       | Description                                                                                                                                               |     |
-| ------------------ | ----------- | ---------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- | --- |
-| `inputName`        |             | `string`   | The key you would like to be assigned to the state of each of the inputs that are created                                                                 |     |
-| `addButtonText`    | "Add Input" | `string`   | The text you would like to appear on the button to create another input                                                                                   |
-| `setInput`         |             | `function` | The setState function you would like to be executed when a user types into the input (setState, or useState)                                              |     |
-| `input`            |             | `Array`    | The state you will pass to the component. Must be the shape of `[{inputName: ""}]`                                                                        |     |
-| `onSubmit`         |             | `Function` | The onSubmit function you would like to execute when a user submits the form                                                                              |     |
-| `submitButtonText` | "Submit"    | `string`   | The text you would like to appear on the submit button                                                                                                    |     |
-| `addPosition`      | "top"       | `string`   | The position you would like the "Add Input" button to be. "top" will make it above the inputs, "bottom" will place it below and next to the submit button |     |
-| `type`             | "text"      | `string`   | The `type` of input you would like to have                                                                                                                |     |
-| `placeholderText`  | "Input.."   | `string`   | The text you would like to have as a placeholder for the inputs                                                                                           |     |
-| `removeText`       | "Remove"    | `string`   | The text you would like to have in the remove input button                                                                                                |     |
+| Name | Default | Type | Description | Required |
+| ------------------ | ----------- | ---------- | | ---------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- | --- |
+| `inputName` | | `string` | The key you would like to be assigned to the state of each of the inputs that are created | no |
+| `addButtonText` | "Add Input" | `string` | The text you would like to appear on the button to create another input | no |
+| `setInput` | | `function` | The setState function you would like to be executed when a user types into the input (setState, or useState) | yes |
+| `input` | | `Array` | The state you will pass to the component. Must be the shape of `[{inputName: ""}]` | yes |
+| `onSubmit` | | `Function` | The onSubmit function you would like to execute when a user submits the form | yes |
+| `submitButtonText` | "Submit" | `string` | The text you would like to appear on the submit button | no |
+| `addPosition` | "top" | `string` | The position you would like the "Add Input" button to be. "top" will make it above the inputs, "bottom" will place it below and next to the submit button | no |
+| `type` | "text" | `string` | The `type` of input you would like to have | no |
+| `placeholderText` | "Input.." | `string` | The text you would like to have as a placeholder for the inputs | no |
+| `removeText` | "Remove" | `string` | The text you would like to have in the remove input button | no |
 
 ## Example
 
@@ -62,6 +68,50 @@ const App = () => {
 }
 
 export default App
+```
+
+## Styling
+
+_Each of the Elements in the `react-dynamic-input` Component can be targeted througn CSS with a `className` attribute:_
+
+- **Enitre Component:**
+
+```css
+#DynamicInput {
+  /* Add whatever CSS you'd like! */
+}
+```
+
+- **Add Button:**
+
+```css
+.addButton {
+  /* Add whatever CSS you'd like! */
+}
+```
+
+- **Remove Button:**
+
+```css
+.removeButton {
+  /* Add whatever CSS you'd like! */
+}
+```
+
+- **Submit Button:**
+
+```css
+.submitButton {
+  /* Add whatever CSS you'd like! */
+}
+```
+
+- **Input:**
+
+```css
+.dynamicInput {
+  /* Add whatever CSS you'd like! */
+}
 ```
 
 ## To Do

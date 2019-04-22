@@ -1,13 +1,12 @@
 {
   "compilerOptions": {
-    "outDir": "./lib",
+    "outDir": "dist",
     "sourceMap": true,
     "noImplicitAny": true,
     "module": "esnext",
     "target": "es6",
-    "jsx": "preserve",
+    "jsx": "react",
     "lib": ["dom", "dom.iterable", "esnext"],
-    "allowJs": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
@@ -15,9 +14,8 @@
     "forceConsistentCasingInFileNames": true,
     "moduleResolution": "node",
     "resolveJsonModule": true,
-    "noEmit": true,
-    "isolatedModules": true
+    "declaration": true
   },
-  "include": ["./src"],
+  "files": ["./src/DynamicInput.tsx"],
   "exclude": ["node_modules"]
 }
