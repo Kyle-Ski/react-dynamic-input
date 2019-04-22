@@ -124,7 +124,7 @@ _Each of the Elements in the `react-dynamic-input` Component can be targeted thr
 - [x] Add a remove button that will take away the desired input
 - [x] Pass a onSubmit function to component (mauybe just leave this to the user??)
 - [x] Make a reusable component that can accept props
-- [ ] Create GIF of working component
+- [x] Create GIF of working component
 - [ ] Add basic styling for inputs (Styled Components??)
-- [ ] Publish to NPM
+- [x] Publish to NPM
 - [ ] (Possible) Add a submit button for eact of the inputs individually to only submit one thing
