@@ -4,7 +4,7 @@
 
 `react-dynamic-input` allows you to create multiple inputs that each have their own unique state that you define. It also comes with a built in `onSubmit` button which takes a function that you ceate.
 <br>
-<img src=".https://github.com/Kyle-Ski/react-dynamic-input/blob/master/examples/Dynamic%20Example.gif" width="650" alt="Example GIF">
+<img src="https://github.com/Kyle-Ski/react-dynamic-input/blob/master/examples/Dynamic%20Example.gif" width="650" alt="Example GIF">
 
 ## Installation & Usage (WIP)
 
@@ -37,7 +37,7 @@ class YourComponent extends React.Component {
 | `removeText`       | no       | "Remove"    | `string`   | The text you would like to have in the remove input button                                                                                                        |
 
 <br>
-<img src=".https://github.com/Kyle-Ski/react-dynamic-input/blob/master/examples/Optional%20Examples.gif" width="650" alt="Example GIF">
+<img src="https://github.com/Kyle-Ski/react-dynamic-input/blob/master/examples/Optional%20Examples.gif" width="650" alt="Example GIF">
 ## Example
 
 ```js
