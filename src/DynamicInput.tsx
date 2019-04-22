@@ -1,4 +1,4 @@
-import React from "react"
+import * as React from "react"
 
 export interface userPermeablePropzObject {
   [key: string]: any
@@ -51,7 +51,7 @@ const DynamicInput: React.FC<DynamicInputProps> = ({
   }
   if (addPosition === "bottom") {
     return (
-      <div className="DynamicInput">
+      <div id="DynamicInput">
         {input.map((item, index: number) => (
           <div key={(index + 1) * 2}>
             <input
@@ -76,7 +76,7 @@ const DynamicInput: React.FC<DynamicInputProps> = ({
     )
   } else {
     return (
-      <div className="DynamicInput">
+      <div id="DynamicInput">
         <button className="addButton" onClick={() => addInput()}>
           {addButtonText}
         </button>

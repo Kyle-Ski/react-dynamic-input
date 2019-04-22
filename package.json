@@ -2,27 +2,22 @@
   "name": "react-dynamic-input",
   "description": "An input that can be replicated with a button, each input has its own state",
   "author": "Kyle Czajkowski",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "private": false,
   "license": "(ISC OR GPL-3.0)",
-  "main": "build/index.js",
-  "module": "build/index.js",
-  "types": "build/index.d.ts",
+  "main": "dist/DynamicInput.js",
+  "module": "dist/DynamicInput.js",
+  "types": "dist/DynamicInput.d.ts",
   "repository": {
     "type": "git",
     "url": "https://github.com/Kyle-Ski/react-dynamic-input"
-  },
-  "babel": {
-    "presets": [
-      "@babel/react"
-    ]
   },
   "dependencies": {
     "react": "^16.8.6"
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "rm -rf dist && mkdir dist && tsc",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
@@ -36,7 +31,6 @@
     "not op_mini all"
   ],
   "devDependencies": {
-    "@babel/cli": "^7.4.3",
     "@types/react": "^16.8.14",
     "react-dom": "^16.8.6",
     "react-scripts": "2.1.8",
