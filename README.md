@@ -1,12 +1,10 @@
-# Dynamically Created Inputs (Currently under Construction 👷‍♂️)
+# Create multiple inputs!
 
-## Create multiple inputs!
-
-`react-dynamic-input` allows you to create multiple inputs that each have their own unique state that you define. It also comes with a built in `onSubmit` button which takes a function that you ceate.
+`react-dynamic-input` allows you to create multiple inputs that each have their own unique state that you define. It also comes with a built in `onSubmit` button which takes a function that you ceate. Add it to a form or whatever user input you need!
 <br>
 <img src="https://github.com/Kyle-Ski/react-dynamic-input/blob/master/examples/Dynamic%20Example.gif" width="650" alt="Example GIF">
 
-## Installation & Usage (WIP)
+## Installation & Usage
 
 1. `npm i react-dynamic-input`
 
@@ -115,6 +113,10 @@ _Each of the Elements in the `react-dynamic-input` Component can be targeted thr
 }
 ```
 
+## Contributing
+
+I am open to ideas and improvments! If you have a feature or bug fix [open a PR](https://github.com/Kyle-Ski/react-dynamic-input/pulls) or submit an [issue](https://github.com/Kyle-Ski/react-dynamic-input/issues)! Thank you! 🛰
+
 ## To Do
 
 - [x] Changed over to TypeScript to give users better error messages
@@ -123,7 +125,7 @@ _Each of the Elements in the `react-dynamic-input` Component can be targeted thr
 - [x] Add a remove button that will take away the desired input
 - [x] Pass a onSubmit function to component (mauybe just leave this to the user??)
 - [x] Make a reusable component that can accept props
-- [ ] Create GIF of working component
+- [x] Create GIF of working component
 - [ ] Add basic styling for inputs (Styled Components??)
-- [ ] Publish to NPM
+- [x] Publish to NPM
 - [ ] (Possible) Add a submit button for eact of the inputs individually to only submit one thing
