@@ -76,7 +76,7 @@ const App = () => {
 export default App
 ```
 
-<img src="https://github.com/Kyle-Ski/react-dynamic-input/blob/master/examples/Optional%20Examples.gif" width="650" alt="Example GIF">
+<img src="https://github.com/Kyle-Ski/react-dynamic-input/blob/master/examples/Optional%20Examples.gif" width="900" alt="Example GIF">
 
 ## Styling
 
