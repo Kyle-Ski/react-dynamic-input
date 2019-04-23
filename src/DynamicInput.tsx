@@ -1,4 +1,5 @@
 import * as React from "react"
+require("./styles.css")
 
 export interface userPermeablePropzObject {
   [key: string]: any
@@ -8,12 +9,16 @@ export interface DynamicInputProps {
   setInput: Function
   input: Array<userPermeablePropzObject>
   submitButtonText?: string
-  onSubmit: Function
+  onSubmit?: Function
   inputName: string
   addPosition?: string
   type?: string
   placeholderText?: string
+  placeholderNumbered?: boolean
   removeText?: string
+  toolTip?: boolean
+  toolTipText?: string
+  label?: string
 }
 
 const DynamicInput: React.FC<DynamicInputProps> = ({
@@ -23,18 +28,23 @@ const DynamicInput: React.FC<DynamicInputProps> = ({
   submitButtonText = "Submit",
   onSubmit,
   inputName,
-  addPosition,
+  addPosition = "top",
   type = "text",
   placeholderText = "Input..",
-  removeText = "Remove"
+  placeholderNumbered = false,
+  removeText = "Remove",
+  toolTip = false,
+  toolTipText,
+  label = ""
 }) => {
   const addInput = () => {
     setInput([...input, { [inputName]: "" }])
   }
   const removeInput = (index: Number) => {
-    const items = input.filter((item, subIndex) => index !== subIndex)
-
-    setInput(items)
+    if (input.length > 1) {
+      const items = input.filter((item, subIndex) => index !== subIndex)
+      setInput(items)
+    }
   }
 
   const inputChange = (index: Number) => (
@@ -49,57 +59,66 @@ const DynamicInput: React.FC<DynamicInputProps> = ({
     })
     setInput(elements)
   }
-  if (addPosition === "bottom") {
-    return (
-      <div id="DynamicInput">
-        {input.map((item, index: number) => (
-          <div key={(index + 1) * 2}>
-            <input
-              className="dynamicInput"
-              type={type}
-              placeholder={placeholderText}
-              onChange={inputChange(index)}
-              value={item[inputName]}
-            />
-            <button className="removeButton" onClick={() => removeInput(index)}>
-              {removeText}
+  return (
+    <div id="DynamicInput">
+      {label ? <h4 className="dynamicLabel">{label}</h4> : null}
+      {addPosition === "top" ? (
+        <div>
+          {toolTip ? (
+            <div className="dynamicTooltip">
+              <span className="dynamicTooltipText">{toolTipText}</span>
+              <button className="addButton" onClick={() => addInput()}>
+                {addButtonText}
+              </button>
+            </div>
+          ) : (
+            <button className="addButton" onClick={() => addInput()}>
+              {addButtonText}
             </button>
-          </div>
-        ))}
+          )}
+        </div>
+      ) : null}
+      {input.map((item, index: number) => (
+        <div key={(index + 1) * 2}>
+          <input
+            className="dynamicInput"
+            type={type}
+            placeholder={
+              placeholderNumbered
+                ? `${placeholderText} ${index + 1}`
+                : placeholderText
+            }
+            onChange={inputChange(index)}
+            value={item[inputName]}
+          />
+          <button className="removeButton" onClick={() => removeInput(index)}>
+            {removeText}
+          </button>
+        </div>
+      ))}
+      {onSubmit ? (
         <button className="submitButton" onClick={() => onSubmit()}>
           {submitButtonText}
         </button>
-        <button className="addButton" onClick={() => addInput()}>
-          {addButtonText}
-        </button>
-      </div>
-    )
-  } else {
-    return (
-      <div id="DynamicInput">
-        <button className="addButton" onClick={() => addInput()}>
-          {addButtonText}
-        </button>
-        {input.map((item, index) => (
-          <div key={(index + 1) * 2}>
-            <input
-              className="dynamicInput"
-              type={type}
-              placeholder={placeholderText}
-              onChange={inputChange(index)}
-              value={item[inputName]}
-            />
-            <button className="removeButton" onClick={() => removeInput(index)}>
-              {removeText}
+      ) : null}
+      {addPosition === "bottom" ? (
+        <div>
+          {toolTip ? (
+            <div className="dynamicTooltip">
+              <span className="dynamicTooltipText">{toolTipText}</span>
+              <button className="addButton" onClick={() => addInput()}>
+                {addButtonText}
+              </button>
+            </div>
+          ) : (
+            <button className="addButton" onClick={() => addInput()}>
+              {addButtonText}
             </button>
-          </div>
-        ))}
-        <button className="submitButton" onClick={() => onSubmit()}>
-          {submitButtonText}
-        </button>
-      </div>
-    )
-  }
+          )}
+        </div>
+      ) : null}
+    </div>
+  )
 }
 
 export default DynamicInput
