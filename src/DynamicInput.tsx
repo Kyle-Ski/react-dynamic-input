@@ -1,5 +1,5 @@
 import * as React from "react"
-import "styles.css"
+require("./styles.css")
 
 export interface userPermeablePropzObject {
   [key: string]: any
@@ -65,8 +65,8 @@ const DynamicInput: React.FC<DynamicInputProps> = ({
       {addPosition === "top" ? (
         <div>
           {toolTip ? (
-            <div className="tooltip">
-              <span className="tooltiptext">{toolTipText}</span>
+            <div className="dynamicTooltip">
+              <span className="dynamicTooltipText">{toolTipText}</span>
               <button className="addButton" onClick={() => addInput()}>
                 {addButtonText}
               </button>
@@ -104,8 +104,8 @@ const DynamicInput: React.FC<DynamicInputProps> = ({
       {addPosition === "bottom" ? (
         <div>
           {toolTip ? (
-            <div className="tooltip">
-              <span className="tooltiptext">{toolTipText}</span>
+            <div className="dynamicTooltip">
+              <span className="dynamicTooltipText">{toolTipText}</span>
               <button className="addButton" onClick={() => addInput()}>
                 {addButtonText}
               </button>

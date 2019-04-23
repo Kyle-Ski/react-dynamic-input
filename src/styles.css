@@ -1,5 +1,9 @@
 /* Tooltip text */
-.tooltip .tooltiptext {
+.dynamicTooltip {
+  position: relative;
+  display: inline-block;
+}
+.dynamicTooltip .dynamicTooltipText {
   visibility: hidden;
   width: 120px;
   background-color: black;
@@ -11,11 +15,10 @@
   bottom: 100%;
   left: 50%;
   margin-left: -60px;
-  /* Position the tooltip text - see examples below! */
   position: absolute;
   z-index: 1;
 }
-.tooltip .tooltiptext::after {
+.dynamicTooltip .dynamicTooltipText::after {
   content: " ";
   position: absolute;
   top: 100%; /* At the bottom of the tooltip */
@@ -27,6 +30,6 @@
 }
 
 /* Show the tooltip text when you mouse over the tooltip container */
-.tooltip:hover .tooltiptext {
+.dynamicTooltip:hover .dynamicTooltipText {
   visibility: visible;
 }
