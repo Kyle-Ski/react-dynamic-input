@@ -76,6 +76,8 @@ const App = () => {
 export default App
 ```
 
+<img src="https://github.com/Kyle-Ski/react-dynamic-input/blob/master/examples/Optional%20Examples.gif" width="650" alt="Example GIF">
+
 ## Styling
 
 _Each of the Elements in the `react-dynamic-input` Component can be targeted througn CSS with a `className` attribute (the entire component can be targeted with an id):_
