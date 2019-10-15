@@ -19,6 +19,10 @@ export interface DynamicInputProps {
   toolTip?: boolean
   toolTipText?: string
   label?: string
+  inputStyle?: React.CSSProperties
+  addButtonStyle?: React.CSSProperties
+  removeButtonStyle?: React.CSSProperties
+  submitButtonStyle?: React.CSSProperties
 }
 
 const DynamicInput: React.FC<DynamicInputProps> = ({
@@ -35,7 +39,11 @@ const DynamicInput: React.FC<DynamicInputProps> = ({
   removeText = "Remove",
   toolTip = false,
   toolTipText,
-  label = ""
+  label = "",
+  inputStyle = {},
+  addButtonStyle = {},
+  removeButtonStyle = {},
+  submitButtonStyle = {}
 }) => {
   const addInput = () => {
     setInput([...input, { [inputName]: "" }])
@@ -67,12 +75,12 @@ const DynamicInput: React.FC<DynamicInputProps> = ({
           {toolTip ? (
             <div className="dynamicTooltip">
               <span className="dynamicTooltipText">{toolTipText}</span>
-              <button className="addButton" onClick={() => addInput()}>
+              <button className="addButton" onClick={() => addInput()} style={addButtonStyle}>
                 {addButtonText}
               </button>
             </div>
           ) : (
-            <button className="addButton" onClick={() => addInput()}>
+            <button className="addButton" onClick={() => addInput()} style={addButtonStyle}>
               {addButtonText}
             </button>
           )}
@@ -90,14 +98,15 @@ const DynamicInput: React.FC<DynamicInputProps> = ({
             }
             onChange={inputChange(index)}
             value={item[inputName]}
+            style={inputStyle}
           />
-          <button className="removeButton" onClick={() => removeInput(index)}>
+          <button className="removeButton" onClick={() => removeInput(index)} style={removeButtonStyle}>
             {removeText}
           </button>
         </div>
       ))}
       {onSubmit ? (
-        <button className="submitButton" onClick={() => onSubmit()}>
+        <button className="submitButton" onClick={() => onSubmit()} style={submitButtonStyle}>
           {submitButtonText}
         </button>
       ) : null}
@@ -106,12 +115,12 @@ const DynamicInput: React.FC<DynamicInputProps> = ({
           {toolTip ? (
             <div className="dynamicTooltip">
               <span className="dynamicTooltipText">{toolTipText}</span>
-              <button className="addButton" onClick={() => addInput()}>
+              <button className="addButton" onClick={() => addInput()} style={addButtonStyle}>
                 {addButtonText}
               </button>
             </div>
           ) : (
-            <button className="addButton" onClick={() => addInput()}>
+            <button className="addButton" onClick={() => addInput()} style={addButtonStyle}>
               {addButtonText}
             </button>
           )}
