@@ -37,6 +37,10 @@ class YourComponent extends React.Component {
 | `toolTip`             | no       | `false`     | `boolean`  | You can have a tooltip pop up when you scroll your mouse over the add button                                                                                                                                                              |
 | `toolTipText`         | no       |             | `string`   | The text you would like to appear in the tooltip above the add button                                                                                                                                                                     |
 | `label`               | no       | ""          | `string`   | If you would like a label for the inputs you can put the text here (will appear as an `<h4></h4` element above the inputs)                                                                                                                |
+| `inputStyle`        | no | {} | `React.CSSProperties` | Additional input styles         |
+| `addButtonStyle`    | no | {} | `React.CSSProperties` | Additional add button styles    |
+| `removeButtonStyle` | no | {} | `React.CSSProperties` | Additional remove button styles |
+| `submitButtonStyle` | no | {} | `React.CSSProperties` | Additonal submit button styles  |
 
 ## Example
 
