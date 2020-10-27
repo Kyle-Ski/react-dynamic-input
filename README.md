@@ -4,6 +4,20 @@
 <br>
 <img src="https://github.com/Kyle-Ski/react-dynamic-input/blob/master/examples/Dynamic%20Example.gif" width="650" alt="Example GIF">
 
+## How to contribute
+This is a little bit complicated, as you'll need another repo to test your changes on. We'll refer to this as `otherRepo`.
+
+1) Clone react-dynamic-input
+2) Change directories into react-dynamic-input --> `cd react-dynamic-input`
+3) Install all dependencies --> `npm i`
+4) Create a build --> `npm run-script build`
+5) Allow this local repo to be used as a dependency --> `npm link`
+6) Navigate to `otherRepo` --> `cd {to otherRepo}`
+7) Add a dependency in `package.json` pointing to the root of `react-dynamic-input` --> `"react-dynamic-input": "file:/{PATH}/react-dynamic-input"`
+8) Install the local package --> `npm i`
+9) `npm run start` from `otherRepo`
+10) Thanks for contributing!
+
 ## Installation & Usage
 
 1. `npm i react-dynamic-input`
